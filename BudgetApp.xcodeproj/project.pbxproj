@@ -13,6 +13,7 @@
 		CA3034BA2C805A2300962139 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3034B92C805A2300962139 /* Preview Assets.xcassets */; };
 		CA3034C22C805A7200962139 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C02C805A7200962139 /* BudgetModel.xcdatamodeld */; };
 		CA3034C62C805C0000962139 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */; };
+		CA3034C92C805F6000962139 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C82C805F6000962139 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		CA3034B92C805A2300962139 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CA3034C12C805A7200962139 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 		CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA3034C82C805F6000962139 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		CA3034B12C805A2200962139 /* BudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA3034C72C805F5200962139 /* Mangers */,
 				CA3034C32C805BC600962139 /* Models */,
 				CA3034B22C805A2200962139 /* BudgetAppApp.swift */,
 				CA3034B42C805A2200962139 /* ContentView.swift */,
@@ -87,6 +90,14 @@
 				CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA3034C72C805F5200962139 /* Mangers */ = {
+			isa = PBXGroup;
+			children = (
+				CA3034C82C805F6000962139 /* CoreDataManager.swift */,
+			);
+			path = Mangers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 				CA3034B52C805A2200962139 /* ContentView.swift in Sources */,
 				CA3034B32C805A2200962139 /* BudgetAppApp.swift in Sources */,
 				CA3034C62C805C0000962139 /* BudgetCategory+CoreDataClass.swift in Sources */,
+				CA3034C92C805F6000962139 /* CoreDataManager.swift in Sources */,
 				CA3034C22C805A7200962139 /* BudgetModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
