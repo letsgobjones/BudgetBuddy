@@ -9,8 +9,9 @@ import SwiftUI
 
 struct AddBudgetCategoryView: View {
   @State private var title: String = ""
-  @State private var total: Double = 100
+  @State private var total: Double = 250
   @State private var messages: [String] = []
+  @Environment(\.dismiss) private var dismiss
   
   @Environment(\.managedObjectContext) private var viewContext
   
@@ -51,7 +52,7 @@ struct AddBudgetCategoryView: View {
         
         ToolbarItem(placement: .topBarLeading) {
           Button("Cancel") {
-            
+            dismiss()
           }
         }
         
@@ -60,6 +61,7 @@ struct AddBudgetCategoryView: View {
               if isFormValid {
                 saveBudgetCategory()
               }
+              dismiss()
             }
           }
       }
