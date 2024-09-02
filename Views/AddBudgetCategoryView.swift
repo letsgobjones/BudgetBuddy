@@ -62,7 +62,6 @@ struct AddBudgetCategoryView: View {
               }
             }
           }
-
       }
     }
   }
@@ -75,7 +74,6 @@ struct AddBudgetCategoryView: View {
 
 
 extension AddBudgetCategoryView {
-  
   private func saveBudgetCategory() {
     let budgetCategory = BudgetCategory(context: viewContext)
     budgetCategory.title = title

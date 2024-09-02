@@ -23,7 +23,14 @@ struct ContentView: View {
       Text(totalBudget, format: .currency(code: "USD"))
         .fontWeight(.bold)
       VStack {
-        BudgetListView(budgetCategoryResults: budgetCategoryResults)
+        BudgetListView(budgetCategoryResults: budgetCategoryResults, onDeleteBudgetCategory: {
+          budgetCategory in viewContext.delete(budgetCategory)
+          do {
+            try viewContext.save()
+          } catch {
+            print(error)
+          }
+        })
       }
       .sheet(isPresented: $isPresented, content: {
         AddBudgetCategoryView()

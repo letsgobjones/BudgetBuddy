@@ -87,17 +87,8 @@
 		CA3034C32C805BC600962139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CA3034C42C805BCF00962139 /* Extensions */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CA3034C42C805BCF00962139 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CA3034C72C805F5200962139 /* Mangers */ = {
@@ -120,6 +111,7 @@
 		CA8024D32C858C7B00DD2D74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */,
 				CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */,
 			);
 			path = Extensions;

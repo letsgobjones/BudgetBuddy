@@ -9,6 +9,9 @@ import SwiftUI
 
 struct BudgetListView: View {
   let budgetCategoryResults: FetchedResults<BudgetCategory>
+  let onDeleteBudgetCategory: (BudgetCategory) -> Void
+  
+  
   var body: some View {
     
     List {
@@ -22,7 +25,9 @@ struct BudgetListView: View {
                 Text(budgetCategory.total, format: .currency(code: "USD"))
               }
           }
-        }
+          }.onDelete { indexSet in
+            indexSet.map{budgetCategoryResults[$0]}.forEach(onDeleteBudgetCategory)
+          }
       }
       else {
         Text("No Budget Categories Exist!")
