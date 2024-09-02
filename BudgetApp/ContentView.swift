@@ -12,20 +12,22 @@ struct ContentView: View {
   @FetchRequest(sortDescriptors: []) private var budgetCategoryResults: FetchedResults<BudgetCategory>
   @State private var isPresented: Bool = false
   
+  var totalBudget: Double {
+    budgetCategoryResults.reduce(0) { results, budgetCategory in
+      return results + budgetCategory.total
+    }
+  }
   var body: some View {
     
     NavigationStack {
+      Text(totalBudget, format: .currency(code: "USD"))
+        .fontWeight(.bold)
       VStack {
-        List(budgetCategoryResults) { budgetCategory in
-          Text(budgetCategory.title ?? "")
-          
-          
-        }
+        BudgetListView(budgetCategoryResults: budgetCategoryResults)
       }
       .sheet(isPresented: $isPresented, content: {
         AddBudgetCategoryView()
       })
-      
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           Button("Add Category") {
@@ -35,11 +37,10 @@ struct ContentView: View {
       }
       .padding()
     }
-      
-    
   }
 }
 
+
 #Preview {
-    ContentView().environment(\.managedObjectContext, CoreDataManager.shared.viewContect)
+  ContentView().environment(\.managedObjectContext, CoreDataManager.shared.viewContect)
 }
