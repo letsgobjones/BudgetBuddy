@@ -8,17 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  @Environment(\.managedObjectContext) private var viewContext
+  @FetchRequest(sortDescriptors: []) private var budgetCategoryResults: FetchedResults<BudgetCategory>
+  @State private var isPresented: Bool = false
+  
+  var body: some View {
+    
+    NavigationStack {
+      VStack {
+        List(budgetCategoryResults) { budgetCategory in
+          Text(budgetCategory.title ?? "")
+          
+          
         }
-        .padding()
+      }
+      .sheet(isPresented: $isPresented, content: {
+        AddBudgetCategoryView()
+      })
+      
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button("Add Category") {
+            isPresented = true
+          }
+        }
+      }
+      .padding()
     }
+      
+    
+  }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environment(\.managedObjectContext, CoreDataManager.shared.viewContect)
 }
