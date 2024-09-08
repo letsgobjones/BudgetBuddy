@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct BudgetDetailView: View {
+  @Environment(\.managedObjectContext) private var viewContext
   let budgetCategory: BudgetCategory
   @State private var title: String = ""
   @State private var total: String = ""
+  
+  var isFormValid: Bool {
+    guard let totalAsDouble = Double(total) else { return false }
+    return !title.isEmpty && !total.isEmpty && totalAsDouble > 0
+  }
   
   var body: some View {
     VStack(alignment: .leading) {
@@ -35,9 +42,12 @@ struct BudgetDetailView: View {
         
         Button("Save Transaction") {
           //save transaction
-        }.frame(maxWidth: .infinity, alignment: .center)
+          saveTransaction()
+        }
+        .disabled(!isFormValid)
+        .frame(maxWidth: .infinity, alignment: .center)
       }
-      .clipShape(RoundedRectangle(cornerRadius: 10)) 
+      .clipShape(RoundedRectangle(cornerRadius: 10))
       Spacer()
     }
     .padding()
@@ -45,3 +55,17 @@ struct BudgetDetailView: View {
   
 }
 
+extension BudgetDetailView {
+  private func saveTransaction() {
+    do {
+      let transaction = Transaction(context: viewContext)
+      transaction.title = title
+      transaction.total = Double(total)!
+      
+      budgetCategory.addToTransactions(transaction)
+      try viewContext.save()
+    } catch {
+      print(error)
+    }
+  }
+}
