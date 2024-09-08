@@ -18,25 +18,27 @@ struct TransactionListView: View {
   }
   
   
-    var body: some View {
-      if transactions.isEmpty {
-        Text("No Transactions,")
-      } else {
-        List {
-          ForEach(transactions) { transaction in
-            
-            HStack {
-              
-              Text(transaction.title ?? "")
-              Spacer()
-              Text(transaction.total, format: .currency(code: "USD"))
-            }
-            
-          }
-        }
-//        .clipShape(RoundedRectangle(cornerRadius: 10))
-        
-      }
+  var body: some View {
+    if transactions.isEmpty {
+      Text("No Transactions.")
+        .frame(maxWidth: .infinity)
+        .multilineTextAlignment(.center)
     }
+    
+    else {
+      List {
+        ForEach(transactions) { transaction in
+          HStack {
+            Text(transaction.title ?? "")
+            Spacer()
+            Text(transaction.total, format: .currency(code: "USD"))
+          }
+          
+        }
+      }
+      .clipShape(RoundedRectangle(cornerRadius: 10))
+      
+    }
+  }
 }
 
