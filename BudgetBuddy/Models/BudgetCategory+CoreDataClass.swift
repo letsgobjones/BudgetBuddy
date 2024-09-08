@@ -16,7 +16,7 @@ public class BudgetCategory: NSManagedObject {
   }
   
   var overSpent: Bool {
-    remainingBudget < 0
+    remainingBudgetTotal < 0
   }
   
   
@@ -26,7 +26,7 @@ public class BudgetCategory: NSManagedObject {
     }
   }
   
-  var remainingBudget: Double {
+  var remainingBudgetTotal: Double {
     self.total - transactionsTotal
   }
   

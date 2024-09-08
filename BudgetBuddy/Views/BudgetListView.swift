@@ -24,8 +24,15 @@ struct BudgetListView: View {
             HStack {
               Text(budgetCategory.title ?? "")
               Spacer()
-              VStack {
+              VStack(alignment: .trailing, spacing: 10) {
                 Text(budgetCategory.total, format: .currency(code: "USD"))
+                
+                HStack {
+                Text("\(budgetCategory.overSpent  ? "Overspent" : "Remaining")")
+                  Text(budgetCategory.remainingBudgetTotal, format: .currency(code: "USD"))
+                }
+                .fontWeight(.bold)
+                .foregroundStyle(budgetCategory.overSpent ? .red : .green)
               }
             }
           }
@@ -39,7 +46,7 @@ struct BudgetListView: View {
       
       
     }
-    .clipShape(RoundedRectangle(cornerRadius: 10))
+    .listStyle(.plain)
     .navigationDestination(for: BudgetCategory.self) { budgetCategory in
       BudgetDetailView(budgetCategory: budgetCategory)
     }

@@ -17,6 +17,7 @@
 		CA787FCC2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */; };
 		CA787FCE2C8DC1AB008AA0DD /* BudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FCD2C8DC1AB008AA0DD /* BudgetDetailView.swift */; };
 		CA787FD02C8DD22C008AA0DD /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FCF2C8DD22C008AA0DD /* TransactionListView.swift */; };
+		CA787FD22C8DDE2A008AA0DD /* BudgetSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FD12C8DDE2A008AA0DD /* BudgetSummaryView.swift */; };
 		CA8024D22C8588D900DD2D74 /* AddBudgetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */; };
 		CA8024D52C858C9500DD2D74 /* NumberFormater+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */; };
 		CA8024D72C859B1D00DD2D74 /* BudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */; };
@@ -34,6 +35,7 @@
 		CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA787FCD2C8DC1AB008AA0DD /* BudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailView.swift; sourceTree = "<group>"; };
 		CA787FCF2C8DD22C008AA0DD /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		CA787FD12C8DDE2A008AA0DD /* BudgetSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryView.swift; sourceTree = "<group>"; };
 		CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryView.swift; sourceTree = "<group>"; };
 		CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormater+Extensions.swift"; sourceTree = "<group>"; };
 		CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */,
 				CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */,
 				CA787FCD2C8DC1AB008AA0DD /* BudgetDetailView.swift */,
+				CA787FD12C8DDE2A008AA0DD /* BudgetSummaryView.swift */,
 				CA787FCF2C8DD22C008AA0DD /* TransactionListView.swift */,
 			);
 			path = Views;
@@ -202,6 +205,7 @@
 				CA3034C62C805C0000962139 /* BudgetCategory+CoreDataClass.swift in Sources */,
 				CA787FCC2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift in Sources */,
 				CA8024D22C8588D900DD2D74 /* AddBudgetCategoryView.swift in Sources */,
+				CA787FD22C8DDE2A008AA0DD /* BudgetSummaryView.swift in Sources */,
 				CA787FCE2C8DC1AB008AA0DD /* BudgetDetailView.swift in Sources */,
 				CA8024D52C858C9500DD2D74 /* NumberFormater+Extensions.swift in Sources */,
 				CA787FD02C8DD22C008AA0DD /* TransactionListView.swift in Sources */,

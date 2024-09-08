@@ -29,6 +29,7 @@ struct BudgetDetailView: View {
             Text("Budget")
             Text(budgetCategory.total, format: .currency(code: "USD"))
           }
+          .frame(maxWidth: .infinity)
           .fontWeight(.bold)
         }
         
@@ -43,6 +44,8 @@ struct BudgetDetailView: View {
         Button("Save Transaction") {
           //save transaction
           saveTransaction()
+          title = ""
+          total = ""
         }
         .disabled(!isFormValid)
         .frame(maxWidth: .infinity, alignment: .center)
@@ -50,7 +53,8 @@ struct BudgetDetailView: View {
       .clipShape(RoundedRectangle(cornerRadius: 10))
       
       
-      
+      //Display summary of budget category
+BudgetSummaryView(budgetCategory: budgetCategory)
       
       TransactionListView(request: BudgetCategory.transactionsByCategoryRequest( budgetCategory))
       
