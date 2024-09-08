@@ -48,6 +48,9 @@ struct BudgetDetailView: View {
         .frame(maxWidth: .infinity, alignment: .center)
       }
       .clipShape(RoundedRectangle(cornerRadius: 10))
+      
+      TransactionListView(request: BudgetCategory.transactionsByCategoryRequest( budgetCategory))
+      
       Spacer()
     }
     .padding()
