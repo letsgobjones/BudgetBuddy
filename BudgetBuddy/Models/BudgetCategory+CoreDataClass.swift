@@ -15,9 +15,32 @@ public class BudgetCategory: NSManagedObject {
     self.dateCreated = Date()
   }
   
+  var overSpent: Bool {
+    remainingBudget < 0
+  }
   
-  static func transactionsByCategoryRequest(_ budgetCategory: BudgetCategory) -> NSFetchRequest<Transaction> {
+  
+  var transactionsTotal: Double {
+    transactionArray.reduce(0) { result, transaction in
+      result + transaction.total
+    }
+  }
+  
+  var remainingBudget: Double {
+    self.total - transactionsTotal
+  }
+  
+  private var transactionArray: [Transaction] {
+guard let transactions = transactions else { return [] }
+let allTransactions = (transactions.allObjects as? [Transaction]) ?? []
+
+    return allTransactions.sorted {
+      $0.dateCreated! > $1.dateCreated!
+    }
+  }
+      
     
+  static func transactionsByCategoryRequest(_ budgetCategory: BudgetCategory) -> NSFetchRequest<Transaction> {
     
     let request = Transaction.fetchRequest()
     request.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: false)]

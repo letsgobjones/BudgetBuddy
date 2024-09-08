@@ -49,6 +49,9 @@ struct BudgetDetailView: View {
       }
       .clipShape(RoundedRectangle(cornerRadius: 10))
       
+      
+      
+      
       TransactionListView(request: BudgetCategory.transactionsByCategoryRequest( budgetCategory))
       
       Spacer()
