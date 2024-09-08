@@ -23,14 +23,7 @@ struct ContentView: View {
       Text(totalBudget, format: .currency(code: "USD"))
         .fontWeight(.bold)
       VStack {
-        BudgetListView(budgetCategoryResults: budgetCategoryResults, onDeleteBudgetCategory: {
-          budgetCategory in viewContext.delete(budgetCategory)
-          do {
-            try viewContext.save()
-          } catch {
-            print(error)
-          }
-        })
+        BudgetListView(budgetCategoryResults: budgetCategoryResults, onDeleteBudgetCategory: deleteBudgetCategory)
       }
       .sheet(isPresented: $isPresented, content: {
         AddBudgetCategoryView()
@@ -50,4 +43,16 @@ struct ContentView: View {
 
 #Preview {
   ContentView().environment(\.managedObjectContext, CoreDataManager.shared.viewContect)
+}
+
+
+extension ContentView {
+  private func deleteBudgetCategory(budgetCategory: BudgetCategory) {
+    viewContext.delete(budgetCategory)
+    do {
+      try viewContext.save()
+    } catch {
+      print(error)
+    }
+  }
 }
