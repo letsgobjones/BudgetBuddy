@@ -17,15 +17,19 @@ struct BudgetListView: View {
     List {
       if !budgetCategoryResults.isEmpty {
         
-          ForEach(budgetCategoryResults) { budgetCategory in
+        ForEach(budgetCategoryResults) { budgetCategory in
+          NavigationLink(value: budgetCategory) {
+            
+            
             HStack {
-            Text(budgetCategory.title ?? "")
+              Text(budgetCategory.title ?? "")
               Spacer()
               VStack {
                 Text(budgetCategory.total, format: .currency(code: "USD"))
               }
+            }
           }
-          }.onDelete { indexSet in
+        }.onDelete { indexSet in
             indexSet.map{budgetCategoryResults[$0]}.forEach(onDeleteBudgetCategory)
           }
       }
@@ -35,10 +39,9 @@ struct BudgetListView: View {
       
       
     }
-    
-    
-    
-    
+    .navigationDestination(for: BudgetCategory.self) { budgetCategory in
+      BudgetDetailView(budgetCategory: budgetCategory)
+    }
   }
 }
 

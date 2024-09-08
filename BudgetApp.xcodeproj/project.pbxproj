@@ -15,6 +15,7 @@
 		CA3034C62C805C0000962139 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */; };
 		CA3034C92C805F6000962139 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C82C805F6000962139 /* CoreDataManager.swift */; };
 		CA787FCC2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */; };
+		CA787FCE2C8DC1AB008AA0DD /* BudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FCD2C8DC1AB008AA0DD /* BudgetDetailView.swift */; };
 		CA8024D22C8588D900DD2D74 /* AddBudgetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */; };
 		CA8024D52C858C9500DD2D74 /* NumberFormater+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */; };
 		CA8024D72C859B1D00DD2D74 /* BudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */; };
@@ -30,6 +31,7 @@
 		CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA3034C82C805F6000962139 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA787FCD2C8DC1AB008AA0DD /* BudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailView.swift; sourceTree = "<group>"; };
 		CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryView.swift; sourceTree = "<group>"; };
 		CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormater+Extensions.swift"; sourceTree = "<group>"; };
 		CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListView.swift; sourceTree = "<group>"; };
@@ -69,7 +71,6 @@
 			children = (
 				CA3034C72C805F5200962139 /* Mangers */,
 				CA3034C32C805BC600962139 /* Models */,
-				CA3034B42C805A2200962139 /* ContentView.swift */,
 				CA8024D32C858C7B00DD2D74 /* Extensions */,
 				CA3034B62C805A2300962139 /* Assets.xcassets */,
 				CA3034B82C805A2300962139 /* Preview Content */,
@@ -89,6 +90,8 @@
 		CA3034C32C805BC600962139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */,
+				CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,8 +107,10 @@
 		CA8024D02C8588B900DD2D74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA3034B42C805A2200962139 /* ContentView.swift */,
 				CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */,
 				CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */,
+				CA787FCD2C8DC1AB008AA0DD /* BudgetDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */,
-				CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */,
-				CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				CA3034C62C805C0000962139 /* BudgetCategory+CoreDataClass.swift in Sources */,
 				CA787FCC2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift in Sources */,
 				CA8024D22C8588D900DD2D74 /* AddBudgetCategoryView.swift in Sources */,
+				CA787FCE2C8DC1AB008AA0DD /* BudgetDetailView.swift in Sources */,
 				CA8024D52C858C9500DD2D74 /* NumberFormater+Extensions.swift in Sources */,
 				CA3034C92C805F6000962139 /* CoreDataManager.swift in Sources */,
 				CA3034C22C805A7200962139 /* BudgetModel.xcdatamodeld in Sources */,
