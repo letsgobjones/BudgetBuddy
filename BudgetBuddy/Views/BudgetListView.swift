@@ -39,6 +39,7 @@ struct BudgetListView: View {
       
       
     }
+    .clipShape(RoundedRectangle(cornerRadius: 10))
     .navigationDestination(for: BudgetCategory.self) { budgetCategory in
       BudgetDetailView(budgetCategory: budgetCategory)
     }
