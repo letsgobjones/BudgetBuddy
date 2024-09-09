@@ -11,7 +11,6 @@
 		CA3034B52C805A2200962139 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034B42C805A2200962139 /* ContentView.swift */; };
 		CA3034B72C805A2300962139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3034B62C805A2300962139 /* Assets.xcassets */; };
 		CA3034BA2C805A2300962139 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3034B92C805A2300962139 /* Preview Assets.xcassets */; };
-		CA3034C22C805A7200962139 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C02C805A7200962139 /* BudgetModel.xcdatamodeld */; };
 		CA3034C62C805C0000962139 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */; };
 		CA3034C92C805F6000962139 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3034C82C805F6000962139 /* CoreDataManager.swift */; };
 		CA787FCC2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */; };
@@ -21,6 +20,7 @@
 		CA8024D22C8588D900DD2D74 /* AddBudgetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */; };
 		CA8024D52C858C9500DD2D74 /* NumberFormater+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */; };
 		CA8024D72C859B1D00DD2D74 /* BudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */; };
+		CAA945A22C8EDC1800ACECE9 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAA945A02C8EDC1800ACECE9 /* BudgetModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,6 @@
 		CA3034B42C805A2200962139 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA3034B62C805A2300962139 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA3034B92C805A2300962139 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CA3034C12C805A7200962139 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 		CA3034C52C805C0000962139 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA3034C82C805F6000962139 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CA787FCB2C8DBFE1008AA0DD /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		CA8024D12C8588D900DD2D74 /* AddBudgetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryView.swift; sourceTree = "<group>"; };
 		CA8024D42C858C9500DD2D74 /* NumberFormater+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormater+Extensions.swift"; sourceTree = "<group>"; };
 		CA8024D62C859B1D00DD2D74 /* BudgetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListView.swift; sourceTree = "<group>"; };
+		CAA945A12C8EDC1800ACECE9 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,6 @@
 				CA8024D32C858C7B00DD2D74 /* Extensions */,
 				CA3034B62C805A2300962139 /* Assets.xcassets */,
 				CA3034B82C805A2300962139 /* Preview Content */,
-				CA3034C02C805A7200962139 /* BudgetModel.xcdatamodeld */,
 			);
 			path = BudgetBuddy;
 			sourceTree = "<group>";
@@ -87,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				CA3034B92C805A2300962139 /* Preview Assets.xcassets */,
+				CAA945A02C8EDC1800ACECE9 /* BudgetModel.xcdatamodeld */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -207,10 +207,10 @@
 				CA8024D22C8588D900DD2D74 /* AddBudgetCategoryView.swift in Sources */,
 				CA787FD22C8DDE2A008AA0DD /* BudgetSummaryView.swift in Sources */,
 				CA787FCE2C8DC1AB008AA0DD /* BudgetDetailView.swift in Sources */,
+				CAA945A22C8EDC1800ACECE9 /* BudgetModel.xcdatamodeld in Sources */,
 				CA8024D52C858C9500DD2D74 /* NumberFormater+Extensions.swift in Sources */,
 				CA787FD02C8DD22C008AA0DD /* TransactionListView.swift in Sources */,
 				CA3034C92C805F6000962139 /* CoreDataManager.swift in Sources */,
-				CA3034C22C805A7200962139 /* BudgetModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,14 +418,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CA3034C02C805A7200962139 /* BudgetModel.xcdatamodeld */ = {
+		CAA945A02C8EDC1800ACECE9 /* BudgetModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CA3034C12C805A7200962139 /* BudgetModel.xcdatamodel */,
+				CAA945A12C8EDC1800ACECE9 /* BudgetModel.xcdatamodel */,
 			);
-			currentVersion = CA3034C12C805A7200962139 /* BudgetModel.xcdatamodel */;
+			currentVersion = CAA945A12C8EDC1800ACECE9 /* BudgetModel.xcdatamodel */;
 			name = BudgetModel.xcdatamodeld;
-			path = "/Users/brandon/Documents/Tech/iOS Development/The Ultimate 70+ Hours iOS Development Bootcamp/BudgetApp/BudgetApp/BudgetModel.xcdatamodeld";
+			path = "/Users/brandon/Downloads/BudgetsApp 2/BudgetsApp/BudgetModel.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
