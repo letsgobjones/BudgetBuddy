@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
   @Environment(\.managedObjectContext) private var viewContext
-  @FetchRequest(sortDescriptors: []) private var budgetCategoryResults: FetchedResults<BudgetCategory>
+  @FetchRequest(fetchRequest: BudgetCategory.all) var budgetCategoryResults
   @State private var isPresented: Bool = false
   @State private var sheetAction: SheetAction?
   
@@ -21,8 +21,13 @@ struct ContentView: View {
   var body: some View {
     
     NavigationStack {
-      Text(totalBudget, format: .currency(code: "USD"))
-        .fontWeight(.bold)
+      HStack  {
+        Text("Total Budget")
+        Text(totalBudget, format: .currency(code: "USD"))
+          .fontWeight(.bold)
+      }
+      .padding()
+      
       VStack {
         BudgetListView(budgetCategoryResults: budgetCategoryResults, onDeleteBudgetCategory: deleteBudgetCategory, onEditBudgetCategory: editBudgetCategory)
       }
@@ -42,7 +47,7 @@ struct ContentView: View {
           }
         }
       }
-      .padding()
+//      .padding()
     }
   }
 }

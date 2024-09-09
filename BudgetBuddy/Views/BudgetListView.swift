@@ -34,10 +34,16 @@ struct BudgetListView: View {
               }
             }
             .contentShape(Rectangle())
-            .onLongPressGesture {
-              onEditBudgetCategory(budgetCategory)
-            }
+              .onLongPressGesture {
+                          onEditBudgetCategory(budgetCategory)
+                        }
+          
+
           }
+         
+          
+          
+          
         }.onDelete { indexSet in
             indexSet.map{budgetCategoryResults[$0]}.forEach(onDeleteBudgetCategory)
           }

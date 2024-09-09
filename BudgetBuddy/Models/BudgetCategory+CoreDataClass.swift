@@ -38,6 +38,14 @@ let allTransactions = (transactions.allObjects as? [Transaction]) ?? []
       $0.dateCreated! > $1.dateCreated!
     }
   }
+  
+  
+  static var all: NSFetchRequest<BudgetCategory> {
+    let request = BudgetCategory.fetchRequest()
+    request.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: false)]
+    return request
+  }
+  
       
   
   static func byId(_ id: NSManagedObjectID) -> BudgetCategory {
