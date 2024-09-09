@@ -11,6 +11,7 @@ struct ContentView: View {
   @Environment(\.managedObjectContext) private var viewContext
   @FetchRequest(sortDescriptors: []) private var budgetCategoryResults: FetchedResults<BudgetCategory>
   @State private var isPresented: Bool = false
+  @State private var sheetAction: SheetAction?
   
   var totalBudget: Double {
     budgetCategoryResults.reduce(0) { results, budgetCategory in
@@ -23,15 +24,21 @@ struct ContentView: View {
       Text(totalBudget, format: .currency(code: "USD"))
         .fontWeight(.bold)
       VStack {
-        BudgetListView(budgetCategoryResults: budgetCategoryResults, onDeleteBudgetCategory: deleteBudgetCategory)
+        BudgetListView(budgetCategoryResults: budgetCategoryResults, onDeleteBudgetCategory: deleteBudgetCategory, onEditBudgetCategory: editBudgetCategory)
       }
-      .sheet(isPresented: $isPresented, content: {
-        AddBudgetCategoryView()
+      .sheet(item: $sheetAction, content: { sheetAction in
+        //disply the sheet
+        switch sheetAction {
+        case .add:
+          AddBudgetCategoryView()
+        case .edit(_):
+          AddBudgetCategoryView()
+        }
       })
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           Button("Add Category") {
-            isPresented = true
+            sheetAction = .add
           }
         }
       }
@@ -53,6 +60,27 @@ extension ContentView {
       try viewContext.save()
     } catch {
       print(error)
+    }
+  }
+  
+  private func editBudgetCategory(budgetCategory: BudgetCategory) {
+    sheetAction = .edit(budgetCategory)
+  }
+  
+}
+
+
+enum SheetAction: Identifiable {
+  case add
+  case edit(BudgetCategory)
+  
+  var id: Int {
+    switch self {
+    case .add:
+      return 1
+      
+    case .edit(_):
+      return 2
     }
   }
 }

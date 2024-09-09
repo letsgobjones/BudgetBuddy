@@ -10,7 +10,7 @@ import SwiftUI
 struct BudgetListView: View {
   let budgetCategoryResults: FetchedResults<BudgetCategory>
   let onDeleteBudgetCategory: (BudgetCategory) -> Void
-  
+  let onEditBudgetCategory: (BudgetCategory) -> Void
   
   var body: some View {
     
@@ -19,8 +19,6 @@ struct BudgetListView: View {
         
         ForEach(budgetCategoryResults) { budgetCategory in
           NavigationLink(value: budgetCategory) {
-            
-            
             HStack {
               Text(budgetCategory.title ?? "")
               Spacer()
@@ -34,6 +32,10 @@ struct BudgetListView: View {
                 .fontWeight(.bold)
                 .foregroundStyle(budgetCategory.overSpent ? .red : .green)
               }
+            }
+            .contentShape(Rectangle())
+            .onLongPressGesture {
+              onEditBudgetCategory(budgetCategory)
             }
           }
         }.onDelete { indexSet in
