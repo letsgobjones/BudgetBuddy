@@ -15,6 +15,14 @@ struct AddBudgetCategoryView: View {
   
   @Environment(\.managedObjectContext) private var viewContext
   
+  private var budgetCategory: BudgetCategory?
+  
+  init(budgetCategory: BudgetCategory? = nil) {
+    self.budgetCategory = budgetCategory
+  }
+  
+  
+  
   var isFormValid: Bool {
     messages.removeAll()
     
@@ -48,19 +56,23 @@ struct AddBudgetCategoryView: View {
         }
         
         
-      }.toolbar{
-        
+      }
+      .onAppear {
+        if let budgetCategory = budgetCategory {
+          title = budgetCategory.title ?? ""
+          total = budgetCategory.total
+        }
+      }
+      .toolbar{
         ToolbarItem(placement: .topBarLeading) {
           Button("Cancel") {
             dismiss()
           }
         }
-        
           ToolbarItem(placement: .topBarTrailing) {
             Button("Save") {
               if isFormValid {
-                saveBudgetCategory()
-                dismiss()
+                saveOrUpdate()
               }
             }
           }
@@ -76,15 +88,24 @@ struct AddBudgetCategoryView: View {
 
 
 extension AddBudgetCategoryView {
-  private func saveBudgetCategory() {
-    let budgetCategory = BudgetCategory(context: viewContext)
-    budgetCategory.title = title
-    budgetCategory.total = total
+  private func saveOrUpdate() {
+    if let budgetCategory {
+      //update the exisiting budget category
+      let budget = BudgetCategory.byId(budgetCategory.objectID)
+      budget.title = title
+      budget.total = total
+    } else {
+      //save a new budget category
+      let budgetCategory = BudgetCategory(context: viewContext)
+      budgetCategory.title = title
+      budgetCategory.total = total
+      }
     //save the context
     do {
       try viewContext.save()
+      dismiss()
     } catch {
-      print(error.localizedDescription)
+      print(error)
     }
   }
 }
