@@ -56,7 +56,7 @@ struct BudgetDetailView: View {
       //Display summary of budget category
 BudgetSummaryView(budgetCategory: budgetCategory)
       
-      TransactionListView(request: BudgetCategory.transactionsByCategoryRequest( budgetCategory))
+      TransactionListView(request: BudgetCategory.transactionsByCategoryRequest( budgetCategory), onDeleteTransation: deleteTransaction)
       
       Spacer()
     }
@@ -78,4 +78,20 @@ extension BudgetDetailView {
       print(error)
     }
   }
+  
+  
+  private func deleteTransaction(_ transaction: Transaction) {
+    viewContext.delete(transaction)
+    do {
+      try viewContext.save()
+    } catch {
+      print(error)
+    }
+  }
+  
 }
+
+
+
+
+
